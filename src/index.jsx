@@ -9,11 +9,7 @@ import store from './shared/application/store';
 import { history } from './shared/application/helpers/history';
 import ErrorBoundary from './shared/presentation/ErrorBoundary';
 
-import './shared/infrastructure/i18n/config';
 import './index.scss';
-import '@vecindario/vecindario-suite-components/dist/index.css';
-import '@vecindario/suite-dashboard-layout-lib/dist/index.css';
-import './shared/infrastructure/config/loader';
 
 ReactDOM.render(
 	<Provider store={store}>
