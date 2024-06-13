@@ -1,5 +1,4 @@
 /* eslint-disable class-methods-use-this */
-import { AdminLayout, Error500 } from '@vecindario/suite-dashboard-layout-lib';
 import React, { Component } from 'react';
 import { history } from '../application/helpers/history';
 
@@ -23,9 +22,10 @@ class ErrorBoundary extends Component {
 
 	render500() {
 		return (
-			<AdminLayout>
-				<Error500 />
-			</AdminLayout>
+			<div>
+				{/* <Error500 /> */}
+				ERROR SERVER
+			</div>
 		);
 	}
 

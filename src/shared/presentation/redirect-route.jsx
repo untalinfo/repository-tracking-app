@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Proptypes from 'prop-types';
-import { exampleRoute } from '../../domains/exampleDomain/infrastructure/routes';
 import { homeRoute } from '../infrastructure/routing/routes';
+import { loginRoute } from '../../domains/login/infrastructure/routing/routes';
 
 export const PrivateRoute = ({ component: Component, layout: Layout, ...rest }) => {
 	return (
@@ -14,7 +14,7 @@ export const PrivateRoute = ({ component: Component, layout: Layout, ...rest }) 
 						<Component {...props} />
 					</Layout>
 				) : (
-					<Redirect to={{ pathname: exampleRoute, state: { from: props.location } }} />
+					<Redirect to={{ pathname: loginRoute, state: { from: props.location } }} />
 				)
 			}
 		/>
