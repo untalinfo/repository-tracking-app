@@ -1,0 +1,19 @@
+@import '../../../application/theme/colors.scss';
+
+.container-error-page {
+	@include centered-display-flex;
+	@extend .bg-primary;
+	height: 100vh;
+
+	> .container-content {
+		@extend .color-white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 40px;
+
+		> .link-back {
+			@extend .color-white;
+		}
+	}
+}
