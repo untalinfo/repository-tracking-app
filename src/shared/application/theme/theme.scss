@@ -17,7 +17,8 @@ html {
 }
 
 body {
-	font-size: 1.6rem;
+	font-size: 1.6rem !important;
+	background-color: $bgBody !important;
 }
 
 @each $weight in $fweights {

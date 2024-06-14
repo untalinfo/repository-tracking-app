@@ -1,17 +1,21 @@
 @import 'mixins';
+@import 'variables';
 
-$primary: #244ef1;
-$secondary: #0b1d2e;
+$primary: #4746a8;
+$secondary: #77a2ff;
+$tertiary: #7878f0;
 $success: #04aa5e;
-$warning: #ffb84b;
-$info: #d3dcfc;
-$error: #e30042;
+$warning: #ffbf00;
+$info: #008cff;
+$error: #ff334d;
+$errorLight: #ff6e7c;
 $black: #1f1f1f;
 $white: #ffffff;
-$neutral: #bfbfbf;
+$neutral: #f3f7ff;
+$gray: #6a757d;
 
 $fontColor: $secondary;
-$bgBody: $white;
+$bgBody: $neutral;
 
 @include key-value-color('color', 'color');
 @include key-value-color('bg', 'background-color');

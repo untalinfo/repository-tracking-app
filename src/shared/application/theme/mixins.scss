@@ -78,3 +78,9 @@
 		@include shade-value($name, $colorName, $property, $colorVariable);
 	}
 }
+
+@mixin centered-display-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
