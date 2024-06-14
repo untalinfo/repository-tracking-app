@@ -56,12 +56,16 @@
 	$colorsList: (
 		'primary': $primary,
 		'secondary': $secondary,
+		'tertiary': $tertiary,
 		'success': $success,
 		'warning': $warning,
+		'info': $info,
 		'error': $error,
+		'errorLight': $errorLight,
 		'black': $black,
 		'white': $white,
 		'neutral': $neutral,
+		'gray': $gray,
 	);
 
 	@each $colorName, $colorVariable in $colorsList {
@@ -77,4 +81,10 @@
 
 		@include shade-value($name, $colorName, $property, $colorVariable);
 	}
+}
+
+@mixin centered-display-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

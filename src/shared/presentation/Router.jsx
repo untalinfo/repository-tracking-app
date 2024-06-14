@@ -1,6 +1,8 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { importFiles } from '../application/helpers/common-functions';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import { homeRoute } from '../infrastructure/routing/routes';
 
 const importRouter = import.meta.glob('../../domains/**/infrastructure/routing/router.*');
 const routerDomain = await importFiles(importRouter);
@@ -23,6 +25,9 @@ const Router = () => {
 					/>
 				));
 			})}
+			<Route path="*">
+				<ErrorPage backRoute={homeRoute} />
+			</Route>
 		</Switch>
 	);
 };

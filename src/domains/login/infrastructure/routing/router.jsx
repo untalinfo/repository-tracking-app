@@ -1,24 +1,23 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React, { lazy, Suspense } from 'react';
 import AdminLayout from '../../../../shared/presentation/layouts/AdminLayout';
-import { loginRoute, exampleRoutePublic } from './routes';
+import { loginRoute } from './routes';
 import { UnauthenticatedRoute } from '../../../../shared/presentation/redirect-route';
-import LoginPage from '../../presentation/pages/ExamplePage';
+import LoadingComponent from '../../../../shared/presentation/components/LoadingComponent';
+
+const LoginPage = lazy(() => import('../../presentation/pages/LoginPage'));
 
 const exampleRouter = {
 	layout: AdminLayout,
 	router: [
 		{
 			path: loginRoute,
-			page: LoginPage,
+			page: () => (
+				<Suspense fallback={<LoadingComponent />}>
+					<LoginPage />
+				</Suspense>
+			),
 			routeComponent: UnauthenticatedRoute,
-			layout: ({ children }) => <>{children}</>, // Optional param to custom layout
-		},
-		{
-			path: exampleRoutePublic,
-			page: LoginPage,
-			routeComponent: Route,
-			layout: ({ children }) => <>{children}</>, // Optional param to custom layout
+			layout: ({ children }) => <>{children}</>,
 		},
 	],
 };
